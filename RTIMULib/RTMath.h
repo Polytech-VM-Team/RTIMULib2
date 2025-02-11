@@ -81,6 +81,8 @@ class RTVector3
 public:
     RTVector3();
     RTVector3(RTFLOAT x, RTFLOAT y, RTFLOAT z);
+    RTVector3(const RTVector3& vec);
+    ~RTVector3() = default;
 
     const RTVector3&  operator +=(RTVector3& vec);
     const RTVector3&  operator -=(RTVector3& vec);
@@ -121,6 +123,8 @@ class RTQuaternion
 public:
     RTQuaternion();
     RTQuaternion(RTFLOAT scalar, RTFLOAT x, RTFLOAT y, RTFLOAT z);
+    RTQuaternion(const RTQuaternion &quat);
+    ~RTQuaternion() = default;
 
     RTQuaternion& operator +=(const RTQuaternion& quat);
     RTQuaternion& operator -=(const RTQuaternion& quat);
@@ -166,6 +170,8 @@ class RTMatrix4x4
 {
 public:
     RTMatrix4x4();
+    RTMatrix4x4(const RTMatrix4x4 &mat);
+    ~RTMatrix4x4() = default;
 
     RTMatrix4x4& operator +=(const RTMatrix4x4& mat);
     RTMatrix4x4& operator -=(const RTMatrix4x4& mat);
