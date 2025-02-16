@@ -610,6 +610,9 @@ bool RTIMUMPU9250::IMURead()
     RTMath::convertToVector(fifoData + 6, m_imuData.gyro, m_gyroScale, true);
     RTMath::convertToVector(compassData + 1, m_imuData.compass, 0.6f, false);
 
+    // The transformation of the axes below is necessary for the left-hand coordinate system used in calculations
+    // More see https://github.com/HongshiTan/RTIMULib2/issues/8
+
     //  sort out gyro axes
 
     m_imuData.gyro.setX(m_imuData.gyro.x());
